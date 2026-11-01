@@ -1,7 +1,7 @@
 {
   "name": "vehicle-garage",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Offline, open-source garage app to manage any vehicle: fuel, services, repairs, expenses, reminders and stats.",
   "license": "MIT",
   "type": "module",
