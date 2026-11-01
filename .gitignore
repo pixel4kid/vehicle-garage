@@ -17,3 +17,7 @@ android/captures/
 
 # Local tooling
 .claude/
+
+# Release signing key: NEVER commit
+signing/
+*.p12

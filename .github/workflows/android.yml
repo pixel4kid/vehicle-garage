@@ -36,15 +36,35 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync android
 
+      - name: Set up signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.p12"
+            echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/release.p12" >> "$GITHUB_ENV"
+            echo "BUILD_TYPE=release" >> "$GITHUB_ENV"
+          elif [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            echo "::error::Release tags need the ANDROID_KEYSTORE_BASE64 secret so updates install over older versions."
+            exit 1
+          else
+            echo "No signing key (e.g. a fork or pull request): building a debug APK."
+            echo "BUILD_TYPE=debug" >> "$GITHUB_ENV"
+          fi
+
       - name: Build APK
         working-directory: android
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
         run: |
           chmod +x gradlew
           set +e
-          ./gradlew assembleDebug --no-daemon 2>&1 | tee build.log
+          TASK=assemble${BUILD_TYPE^}
+          ./gradlew $TASK --no-daemon 2>&1 | tee build.log
           status=${PIPESTATUS[0]}
           if [ "$status" -ne 0 ]; then
-            msg=$(grep -A20 "What went wrong" build.log | head -40 | awk '{gsub(/%/,"%25"); printf "%s%%0A", $0}')
+            msg=$(grep -A20 "What went wrong" build.log | head -40 | awk "{gsub(/%/,\"%25\"); printf \"%s%%0A\", \$0}")
             echo "::error title=Gradle build failed::$msg"
           fi
           exit $status
@@ -52,8 +72,9 @@ jobs:
       - name: Rename APK
         run: |
           VERSION=$(node -p "require('./package.json').version")
+          SUFFIX=$([ "$BUILD_TYPE" = debug ] && echo "-debug" || echo "")
           mkdir -p out
-          cp android/app/build/outputs/apk/debug/app-debug.apk "out/vehicle-garage-v${VERSION}.apk"
+          cp android/app/build/outputs/apk/$BUILD_TYPE/app-$BUILD_TYPE.apk "out/vehicle-garage-v${VERSION}${SUFFIX}.apk"
 
       - uses: actions/upload-artifact@v4
         with:

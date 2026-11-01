@@ -30,7 +30,9 @@
 
 1. Go to [Releases](https://github.com/pixel4kid/vehicle-garage/releases/latest) and download `vehicle-garage-vX.Y.Z.apk` on your phone.
 2. Open it. Android will ask you to allow installing apps from your browser / file manager â€“ allow it once.
-3. Done. Updates install over the old version and keep your data.
+3. Done. Newer versions install over the old one and keep your data.
+
+> Coming from **v1.0.2 or older**? Those were test builds signed with a temporary key. Export a backup in Settings, uninstall, install the new version, then import the backup. You only need to do this once.
 
 > Tip: use **Settings â†’ Export backup** now and then, and before uninstalling.
 
@@ -92,6 +94,10 @@ assets/              app icon and splash source images
    ```
 3. GitHub Actions builds the APK and attaches it to a new release automatically.
 
+## Release signing (maintainers)
+
+Release APKs are signed in CI with a key stored as GitHub secrets: `ANDROID_KEYSTORE_BASE64` (base64 of a PKCS12 keystore), `ANDROID_KEYSTORE_PASSWORD` and `ANDROID_KEY_ALIAS`. Without them (forks, pull requests) CI builds a debug APK instead, and tagged releases fail on purpose so an unsigned build is never published.
+
 ## Contributing
 
 Issues and pull requests are welcome! Ideas for what to build next:
@@ -101,7 +107,7 @@ Issues and pull requests are welcome! Ideas for what to build next:
 - [ ] Charts for fuel economy over time
 - [ ] Documents (insurance, registration) with expiry dates
 - [ ] Translations
-- [ ] Signed release builds / F-Droid listing
+- [ ] F-Droid listing
 
 Please keep the app **offline-first and private**: no analytics or network calls.
 
