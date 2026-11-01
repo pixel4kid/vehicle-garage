@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { resetAll, saveSettings, useData } from '../store';
 import { exportCsv, exportJson, importJson } from '../backup';
 import type { Theme } from '../types';
@@ -7,7 +7,7 @@ import { Icon } from '../components/Icon';
 
 const CURRENCIES = ['USD', 'EUR', 'GBP', 'PKR', 'INR', 'AED', 'SAR', 'CAD', 'AUD', 'JPY', 'CNY', 'TRY', 'BRL', 'ZAR', 'NGN', 'BDT'];
 
-export const REPO_URL = 'https://github.com/your-username/vehicle-garage';
+export const REPO_URL = 'https://github.com/pixel4kid/vehicle-garage';
 
 export function SettingsScreen() {
   const { settings, vehicles, logs } = useData();

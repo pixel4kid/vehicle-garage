@@ -1,7 +1,7 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+﻿import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.vehiclegarage',
+  appId: 'io.github.pixel4kid.vehiclegarage',
   appName: 'Vehicle Garage',
   webDir: 'dist',
   android: {

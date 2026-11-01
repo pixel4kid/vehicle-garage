@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="assets/icon-only.png" width="96" alt="Vehicle Garage icon" />
 </p>
 
@@ -10,29 +10,29 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>⬇️ Download the APK</b></a>
+  <a href="https://github.com/pixel4kid/vehicle-garage/releases/latest"><b>â¬‡ï¸ Download the APK</b></a>
 </p>
 
 ---
 
 ## Features
 
-- **Any vehicle** – cars, motorcycles, scooters, trucks, vans, bicycles, boats, tractors… Track usage in km, miles or **engine hours**, and fuel in litres, gallons or kWh (EVs).
-- **Log anything** – fuel fill-ups, services, repairs, expenses, trips, notes, or anything else, with date, odometer, cost, place and notes.
-- **Reminders** – by date, by odometer, or both. Repeating reminders (e.g. *oil change every 5,000 km or 180 days*) schedule the next one when you tick them off. Overdue and upcoming items show on the garage screen.
-- **Stats** – total / yearly / monthly spending, cost per km, 12-month spending chart, spending by category, fuel economy (full-to-full method, also L/100km).
+- **Any vehicle** â€“ cars, motorcycles, scooters, trucks, vans, bicycles, boats, tractorsâ€¦ Track usage in km, miles or **engine hours**, and fuel in litres, gallons or kWh (EVs).
+- **Log anything** â€“ fuel fill-ups, services, repairs, expenses, trips, notes, or anything else, with date, odometer, cost, place and notes.
+- **Reminders** â€“ by date, by odometer, or both. Repeating reminders (e.g. *oil change every 5,000 km or 180 days*) schedule the next one when you tick them off. Overdue and upcoming items show on the garage screen.
+- **Stats** â€“ total / yearly / monthly spending, cost per km, 12-month spending chart, spending by category, fuel economy (full-to-full method, also L/100km).
 - **Search & filter** your log history.
-- **Backup** – export / import a JSON backup, export all logs as CSV (opens in Excel / Google Sheets).
-- **Private** – no account, no ads, no tracking, no internet needed. Your data never leaves your phone.
+- **Backup** â€“ export / import a JSON backup, export all logs as CSV (opens in Excel / Google Sheets).
+- **Private** â€“ no account, no ads, no tracking, no internet needed. Your data never leaves your phone.
 - Light & dark theme, any currency.
 
 ## Install
 
-1. Go to [Releases](../../releases/latest) and download `vehicle-garage-vX.Y.Z.apk` on your phone.
-2. Open it. Android will ask you to allow installing apps from your browser / file manager – allow it once.
+1. Go to [Releases](https://github.com/pixel4kid/vehicle-garage/releases/latest) and download `vehicle-garage-vX.Y.Z.apk` on your phone.
+2. Open it. Android will ask you to allow installing apps from your browser / file manager â€“ allow it once.
 3. Done. Updates install over the old version and keep your data.
 
-> Tip: use **Settings → Export backup** now and then, and before uninstalling.
+> Tip: use **Settings â†’ Export backup** now and then, and before uninstalling.
 
 ## Tech stack
 
