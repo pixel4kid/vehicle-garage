@@ -1,4 +1,4 @@
-﻿package io.github.pixel4kid.vehiclegarage;
+package io.github.pixel4kid.vehiclegarage;
 
 import com.getcapacitor.BridgeActivity;
 

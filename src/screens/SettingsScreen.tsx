@@ -1,4 +1,4 @@
-﻿import { useRef } from 'react';
+import { useRef } from 'react';
 import { resetAll, saveSettings, useData } from '../store';
 import { exportCsv, exportJson, importJson } from '../backup';
 import type { Theme } from '../types';

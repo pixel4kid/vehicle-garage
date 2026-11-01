@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="assets/icon-only.png" width="96" alt="Vehicle Garage icon" />
 </p>
 
